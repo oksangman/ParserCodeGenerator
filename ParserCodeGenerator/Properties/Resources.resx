@@ -117,76 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="Comment" xml:space="preserve">
-    <value>Comment</value>
+    <value>주석</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Create</value>
+    <value>생성</value>
   </data>
   <data name="CreateClass" xml:space="preserve">
-    <value>Create class</value>
+    <value>클래스 생성</value>
   </data>
   <data name="CreateClassOption" xml:space="preserve">
-    <value>Create class option</value>
+    <value>Class 생성 옵션</value>
   </data>
   <data name="CreateFile" xml:space="preserve">
-    <value>Create file</value>
+    <value>파일 생성</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="example" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\example.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>종료</value>
   </data>
   <data name="File" xml:space="preserve">
-    <value>File</value>
+    <value>파일</value>
   </data>
   <data name="Grammar" xml:space="preserve">
-    <value>Grammar</value>
+    <value>문법</value>
   </data>
   <data name="Grammar_Def" xml:space="preserve">
-    <value>Grammar definition</value>
+    <value>문법 정의</value>
   </data>
   <data name="Index" xml:space="preserve">
-    <value>Index</value>
+    <value>인덱스</value>
   </data>
   <data name="InputNamespaceHint" xml:space="preserve">
-    <value>Input namespace</value>
+    <value>Namespace 입력</value>
   </data>
   <data name="LanguageOption" xml:space="preserve">
-    <value>Language option</value>
+    <value>언어 옵션</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Length</value>
+    <value>길이</value>
+  </data>
+  <data name="LoadExample" xml:space="preserve">
+    <value>예제 불러오기</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>이름</value>
   </data>
   <data name="Namespace" xml:space="preserve">
     <value>Namespace</value>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>Open</value>
+    <value>열기</value>
   </data>
   <data name="Order" xml:space="preserve">
-    <value>Order</value>
+    <value>순서</value>
   </data>
   <data name="QuickView" xml:space="preserve">
-    <value>Quick view</value>
+    <value>바로 보기</value>
   </data>
   <data name="RegularExpression" xml:space="preserve">
-    <value>Regular Expression</value>
+    <value>정규 표현식</value>
   </data>
   <data name="Result" xml:space="preserve">
-    <value>Result</value>
+    <value>결과</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>저장</value>
   </data>
   <data name="TestBuild" xml:space="preserve">
-    <value>Test Build</value>
+    <value>빌드 테스트</value>
   </data>
   <data name="Test_String" xml:space="preserve">
-    <value>Test string</value>
+    <value>테스트 문자열</value>
   </data>
   <data name="Value" xml:space="preserve">
-    <value>Value</value>
+    <value>값</value>
   </data>
 </root>

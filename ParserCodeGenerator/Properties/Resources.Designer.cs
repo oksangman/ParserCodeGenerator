@@ -61,7 +61,16 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Comment과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   English과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ChangeLanguage {
+            get {
+                return ResourceManager.GetString("ChangeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   주석과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Comment {
             get {
@@ -70,7 +79,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Create과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   생성과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Create {
             get {
@@ -79,7 +88,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Create class과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   클래스 생성과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateClass {
             get {
@@ -88,7 +97,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Create class option과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Class 생성 옵션과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateClassOption {
             get {
@@ -97,7 +106,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Create file과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   파일 생성과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateFile {
             get {
@@ -106,7 +115,17 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Exit과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static byte[] example {
+            get {
+                object obj = ResourceManager.GetObject("example", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   종료과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Exit {
             get {
@@ -115,7 +134,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   File과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   파일과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string File {
             get {
@@ -124,7 +143,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Grammar과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   문법과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Grammar {
             get {
@@ -133,7 +152,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Grammar definition과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   문법 정의과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Grammar_Def {
             get {
@@ -142,7 +161,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Index과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   인덱스과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Index {
             get {
@@ -151,7 +170,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Input namespace과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Namespace 입력과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string InputNamespaceHint {
             get {
@@ -160,7 +179,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Language option과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   언어 옵션과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string LanguageOption {
             get {
@@ -169,7 +188,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Length과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   길이과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Length {
             get {
@@ -178,7 +197,16 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Name과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   예제 불러오기과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string LoadExample {
+            get {
+                return ResourceManager.GetString("LoadExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   이름과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Name {
             get {
@@ -196,7 +224,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Open과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   열기과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Open {
             get {
@@ -205,7 +233,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Order과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   순서과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Order {
             get {
@@ -214,7 +242,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Quick view과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   바로 보기과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string QuickView {
             get {
@@ -223,7 +251,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Regular Expression과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   정규 표현식과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string RegularExpression {
             get {
@@ -232,7 +260,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Result과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   결과과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Result {
             get {
@@ -241,7 +269,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Save과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   저장과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Save {
             get {
@@ -250,7 +278,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Test string과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   테스트 문자열과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Test_String {
             get {
@@ -259,7 +287,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Test Build과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   빌드 테스트과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TestBuild {
             get {
@@ -268,7 +296,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Value과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   값과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Value {
             get {

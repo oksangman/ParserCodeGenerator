@@ -6,7 +6,7 @@
         xmlns:r="clr-namespace:ParserCodeGenerator.Properties"
         xmlns:local="clr-namespace:ParserCodeGenerator.Views"
         mc:Ignorable="d"
-        Title="{x:Static r:Resources.CreateClass}" Height="300" Width="200"
+        Title="{lex:Loc CreateClass}" Height="300" Width="200"
         
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -19,8 +19,16 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         
         
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:ResxLocalizationProvider.DefaultAssembly="ParserCodeGenerator"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
+        
+        
         xmlns:viewmodels="clr-namespace:ParserCodeGenerator.ViewModels"
         >
+    <Window.Resources>
+        <viewmodels:CreateClassViewModel x:Key="ViewModel" x:Name="ViewModel"/>
+    </Window.Resources>
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -34,21 +42,21 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="{x:Static r:Resources.Namespace}" Padding="5 0 10 0" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-            <TextBox Grid.Column="1" Text="" materialDesign:HintAssist.Hint="{x:Static r:Resources.InputNamespaceHint}"/>
+            <Label Grid.Column="0" Content="{lex:Loc Namespace}" Padding="5 0 10 0" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1" Text="" materialDesign:HintAssist.Hint="{lex:Loc InputNamespaceHint}"/>
         </Grid>
-        <GroupBox Grid.Row="1" Header="{x:Static r:Resources.LanguageOption}" Margin="0 3 0 3">
+        <GroupBox Grid.Row="1" Header="{lex:Loc LanguageOption}" Margin="0 3 0 3">
             <StackPanel>
                 <CheckBox Content="C#"/>
                 <CheckBox Content="C++"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="2" Header="{x:Static r:Resources.CreateClassOption}" Margin="0 3 0 3">
+        <GroupBox Grid.Row="2" Header="{lex:Loc CreateClassOption}" Margin="0 3 0 3">
             <StackPanel>
-                <RadioButton Content="{x:Static r:Resources.CreateFile}"/>
-                <RadioButton Content="{x:Static r:Resources.QuickView}"/>
+                <RadioButton Content="{lex:Loc CreateFile}"/>
+                <RadioButton Content="{lex:Loc QuickView}"/>
             </StackPanel>
         </GroupBox>
-        <Button Grid.Row="4"  Content="{x:Static r:Resources.Create}" />
+        <Button Grid.Row="4"  Content="{lex:Loc Create}" />
     </Grid>
 </Window>

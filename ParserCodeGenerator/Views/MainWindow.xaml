@@ -3,8 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=System"
         xmlns:r="clr-namespace:ParserCodeGenerator.Properties"
         xmlns:local="clr-namespace:ParserCodeGenerator"
+        xmlns:tool="clr-namespace:ParserCodeGenerator.Tool"
         mc:Ignorable="d"
         Title="MainWindow" Height="764" Width="1024"
         DataContext="{DynamicResource ViewModel}"
@@ -18,6 +21,12 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        lex:LocalizeDictionary.DesignCulture="en-US"
+        lex:ResxLocalizationProvider.DefaultAssembly="ParserCodeGenerator"
+        lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         
         
         xmlns:viewmodels="clr-namespace:ParserCodeGenerator.ViewModels"
@@ -34,14 +43,23 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
-            <MenuItem Header="{x:Static r:Resources.File}">
-                <MenuItem Header="{x:Static r:Resources.Open}" Command="{Binding OpenFileCommand}"/>
-                <MenuItem Header="{x:Static r:Resources.Save}" Command="{Binding SaveFileCommand}"/>
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            
+            <MenuItem Header="{lex:Loc File}">
+                <MenuItem Header="{lex:Loc Open}" Command="{Binding OpenFileCommand}"/>
+                <MenuItem Header="{lex:Loc Save}" Command="{Binding SaveFileCommand}"/>
+                <MenuItem Header="{lex:Loc LoadExample}" Command="{Binding LoadExampleCommand}"/>
 
-                <MenuItem Header="{x:Static r:Resources.Exit}" Command="{Binding ExitCommand}"/>
+                <MenuItem Header="{lex:Loc Exit}" Command="{Binding ExitCommand}"/>
             </MenuItem>
-            <MenuItem Header="{x:Static r:Resources.TestBuild}" Command="{Binding BuildTestCommand}"/>
-            <MenuItem Header="{x:Static r:Resources.CreateClass}" Command="{Binding CreateClassCommand}"/>
+            <MenuItem Header="{lex:Loc TestBuild}" Command="{Binding BuildTestCommand}"/>
+            <MenuItem Header="{lex:Loc CreateClass}" Command="{Binding CreateClassCommand}"/>
+
+            <MenuItem Header="{lex:Loc ChangeLanguage}" Command="{Binding LocalizingCommand}" HorizontalAlignment="Right"/>
         </Menu>
 
         <Grid Grid.Row="1">
@@ -55,8 +73,13 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <!-- 왼쪽 위-->
-            <Label Grid.Row="0" Grid.Column="0" Height="25" Content="{x:Static r:Resources.Grammar_Def}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <DataGrid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GrammarList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" AlternatingRowBackground="#FF292929">
+            <Label Grid.Row="0" Grid.Column="0" Height="25" Content="{lex:Loc Grammar_Def}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <DataGrid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                      ItemsSource="{Binding GrammarList}" 
+                      AutoGenerateColumns="False" AlternatingRowBackground="#FF292929"
+                      tool:VisualHelper.EnableRowsMove="True"
+                      SelectionMode="Single"
+                      >
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
                         <Setter Property="Height" Value="35"/>
@@ -64,9 +87,9 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="{x:Static r:Resources.RegularExpression}" Binding="{Binding RegularExpression}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Name}" Binding="{Binding Name}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Comment}" Binding="{Binding Comment}">
+                    <DataGridTextColumn Header="{lex:Loc RegularExpression}" Binding="{Binding RegularExpression}"/>
+                    <DataGridTextColumn Header="{lex:Loc Name}" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="{lex:Loc Comment}" Binding="{Binding Comment}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="Foreground" Value="LightGreen"/>
@@ -74,13 +97,23 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
                 </DataGrid.Columns>
+                <!--<DataGrid.InputBindings>
+
+                    <KeyBinding Key="Up" Modifiers="Alt" Command="{Binding DataGridMoveUpDownCommand}" CommandParameter="{Binding Key, RelativeSource={RelativeSource Self}}" />
+                    <KeyBinding Key="Down" Modifiers="Alt" Command="{Binding DataGridMoveUpDownCommand}" CommandParameter="{Binding Key, RelativeSource={RelativeSource Self}}" />
+                </DataGrid.InputBindings>-->
+                <!--<i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewKeyDown">
+                        <i:InvokeCommandAction Command="{Binding DataG"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>-->
             </DataGrid>
 
             <!-- splitter -->
             <GridSplitter Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" Width="5"/>
 
             <!-- 오른쪽 위-->
-            <Label Grid.Row="0" Grid.Column="2" Height="25" Content="{x:Static r:Resources.Test_String}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="2" Height="25" Content="{lex:Loc Test_String}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding TestString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
         </Grid>
@@ -99,7 +132,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.ColumnSpan="3" Height="25" Content="{x:Static r:Resources.Result}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Height="25" Content="{lex:Loc Result}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
             <!-- 왼쪽 아래 -->
             <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ResultString}" VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
@@ -116,17 +149,16 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Order}" Binding="{Binding Order}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Grammar}" Binding="{Binding Grammar}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Value}" Binding="{Binding Value}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Index}" Binding="{Binding Index}"/>
-                    <DataGridTextColumn Header="{x:Static r:Resources.Length}" Binding="{Binding Length}"/>
+                    <DataGridTextColumn Header="{lex:Loc Order}" Binding="{Binding Order}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="{lex:Loc Grammar}" Binding="{Binding Grammar}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="{lex:Loc Value}" Binding="{Binding Value}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="{lex:Loc Index}" Binding="{Binding Index}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="{lex:Loc Length}" Binding="{Binding Length}" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
 
-        <ProgressBar Grid.Row="4" Height="20"  Margin="0 3 0 0" Maximum="10" Minimum="0" Value="3"/>
-
+        <ProgressBar Grid.Row="4" Height="20" Margin="0 3 0 0" Maximum="{Binding ProgressMaximum}" Minimum="{Binding ProgressMinimum}" Value="{Binding ProgressValue}"/>
 
     </Grid>
 </Window>

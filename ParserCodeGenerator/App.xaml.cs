@@ -15,7 +15,7 @@ namespace ParserCodeGenerator
     {
         public App()
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ko-KR");
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ko-KR");
         }
     }
 }

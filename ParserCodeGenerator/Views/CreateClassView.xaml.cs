@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParserCodeGenerator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace ParserCodeGenerator.Views
     /// </summary>
     public partial class CreateClassView : Window
     {
+        CreateClassViewModel ViewModel;
         public CreateClassView()
         {
             InitializeComponent();
+            ViewModel = (CreateClassViewModel)FindResource("ViewModel");
+            ViewModel.Init(this);
         }
     }
 }

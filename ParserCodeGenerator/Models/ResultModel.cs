@@ -10,13 +10,13 @@ namespace ParserCodeGenerator.Models
     {
         public ResultModel()
         {
-            _order = "";
+            _order = 0;
             _grammer = "";
             _value = "";
             _index = 0;
             _length = 0;
         }
-        public ResultModel(string order, string grammer, string value, int index, int length)
+        public ResultModel(int order, string grammer, string value, int index, int length)
         {
             _order = order;
             _grammer = grammer;
@@ -25,8 +25,8 @@ namespace ParserCodeGenerator.Models
             _length = length;
         }
 
-        private string _order;
-        public string Order
+        private int _order;
+        public int Order
         {
             get { return _order; }
             set { SetProperty(ref _order, value); }

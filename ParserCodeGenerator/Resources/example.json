@@ -1,0 +1,100 @@
+{
+  "GrammarList": [
+    {
+      "RegularExpression": "//.*?\\r\\n|/\\*(/?[^\\\\>]+)\\*/",
+      "Name": "COMMENT",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\".*?\"",
+      "Name": "STRING",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\bmessage\\b",
+      "Name": "MESSAGE",
+      "Comment": "#test"
+    },
+    {
+      "RegularExpression": "\\benum\\b",
+      "Name": "ENUM",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\bpackage\\b",
+      "Name": "PACKAGE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\brequired\\b",
+      "Name": "REQUIRED",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\boptional\\b",
+      "Name": "OPTIONAL",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\bimport\\b",
+      "Name": "IMPORT",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "<[a-zA-Z0-9_,\\t ]+>",
+      "Name": "TEMPLATE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\bint\\b| long ",
+      "Name": "TYPE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\[[0-9]+\\]",
+      "Name": "ARRAY",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\([0-9]+\\)",
+      "Name": "LENGTH",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": ",",
+      "Name": "COMMA",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": ";",
+      "Name": "SEMI_COLON",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "{",
+      "Name": "STARTSCOPE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "}",
+      "Name": "ENDSCOPE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "[ \\t]+",
+      "Name": "WHITESPACE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "\\r\\n",
+      "Name": "NEWLINE",
+      "Comment": ""
+    },
+    {
+      "RegularExpression": "[a-zA-Z0-9_]+",
+      "Name": "WORD",
+      "Comment": ""
+    }
+  ],
+  "TestString": "import \"common.protof\"\r\n\r\npackage Login;\r\n\r\nenum TestEnum\r\n{\r\n    Option,\r\n    Request,\r\n    Temp,\r\n}\r\n\r\nmessage test_message {\r\n    required int a;\r\n    Common.test a;\r\n    map<int, uint32> c;\r\n    list<int> d;\r\n    string(30) e[10];   //  길이 30 짜리 문자열이 10개 있다\r\n    char a[32];\r\n}\r\n\r\nmessage fixed_message {\r\n    //  optional 이 없어야 하고\r\n    //  고정 길이만 있어야 한다.\r\n    int a;\r\n    char b;\r\n    string(30) c;\r\n\r\n//  string d;   << 이걸 사용하면 non-fixed가 됨\r\n}\r\n\r\nmessage non-fixed_message1 {\r\n    optional int a;\r\n}\r\n\r\nmessage non-fixed_message2 {\r\n    string a;\r\n}\r\n\r\nmessage non-fixed_message2 {\r\n    fixed_message fmessage;\r\n}"
+}
