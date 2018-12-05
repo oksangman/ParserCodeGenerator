@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ParserCodeGenerator.Models;
 using ParserCodeGenerator.Tool;
+using ParserCodeGenerator.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,7 +38,7 @@ namespace ParserCodeGenerator.ViewModels
             DataGridMoveUpDownCommand = new Base.Command<Key>(DataGridMoveUpDown);
         }
 
-        public void Init(System.Windows.Window mainWindow)
+        public void Initialize(System.Windows.Window mainWindow)
         {
             _mainWindow = mainWindow;
 
@@ -205,20 +206,21 @@ namespace ParserCodeGenerator.ViewModels
 
         void CreateClass()
         {
-            --ProgressValue;
-
+            CreateClassView ccv = new CreateClassView(GrammarList);
+            ccv.Owner = _mainWindow;
+            bool? ret = ccv.ShowDialog();
         }
 
         void Localizing()
         {
             CultureInfo newCulture;
-            if (LocalizeDictionary.Instance.Culture.Name.Contains("en-US"))
+            if (LocalizeDictionary.Instance.Culture.Name.Contains("ko-KR"))
             {
-                newCulture = CultureInfo.GetCultureInfo("ko-KR");
+                newCulture = CultureInfo.GetCultureInfo("en-US");
             }
             else
             {
-                newCulture = CultureInfo.GetCultureInfo("en-US");
+                newCulture = CultureInfo.GetCultureInfo("ko-KR");
             }
 
             LocalizeDictionary.Instance.SetCurrentThreadCulture = true;

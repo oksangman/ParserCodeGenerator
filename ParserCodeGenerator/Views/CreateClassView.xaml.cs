@@ -21,11 +21,11 @@ namespace ParserCodeGenerator.Views
     public partial class CreateClassView : Window
     {
         CreateClassViewModel ViewModel;
-        public CreateClassView()
+        public CreateClassView(System.Collections.ObjectModel.ObservableCollection<Models.GrammarModel> grammarList)
         {
             InitializeComponent();
             ViewModel = (CreateClassViewModel)FindResource("ViewModel");
-            ViewModel.Init(this);
+            ViewModel.Initialize(this, grammarList);
         }
     }
 }

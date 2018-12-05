@@ -9,7 +9,10 @@
         xmlns:local="clr-namespace:ParserCodeGenerator"
         xmlns:tool="clr-namespace:ParserCodeGenerator.Tool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="764" Width="1024"
+        
+        
+        WindowStartupLocation="CenterOwner"
+        Title="{lex:Loc ProgramName}" Height="764" Width="1024"
         DataContext="{DynamicResource ViewModel}"
         
         
@@ -24,7 +27,6 @@
         
         
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
-        lex:LocalizeDictionary.DesignCulture="en-US"
         lex:ResxLocalizationProvider.DefaultAssembly="ParserCodeGenerator"
         lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         

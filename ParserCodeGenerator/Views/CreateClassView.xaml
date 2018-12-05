@@ -6,6 +6,9 @@
         xmlns:r="clr-namespace:ParserCodeGenerator.Properties"
         xmlns:local="clr-namespace:ParserCodeGenerator.Views"
         mc:Ignorable="d"
+        
+        DataContext="{DynamicResource ViewModel}"
+        WindowStartupLocation="CenterOwner"
         Title="{lex:Loc CreateClass}" Height="300" Width="200"
         
         
@@ -24,7 +27,8 @@
         lex:ResxLocalizationProvider.DefaultDictionary="Resources"
         
         
-        xmlns:viewmodels="clr-namespace:ParserCodeGenerator.ViewModels"
+        xmlns:viewmodels="clr-namespace:ParserCodeGenerator.ViewModels" 
+        
         >
     <Window.Resources>
         <viewmodels:CreateClassViewModel x:Key="ViewModel" x:Name="ViewModel"/>
@@ -43,20 +47,20 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="{lex:Loc Namespace}" Padding="5 0 10 0" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-            <TextBox Grid.Column="1" Text="" materialDesign:HintAssist.Hint="{lex:Loc InputNamespaceHint}"/>
+            <TextBox Grid.Column="1" Text="{Binding Namespace}" materialDesign:HintAssist.Hint="{lex:Loc InputNamespaceHint}"/>
         </Grid>
         <GroupBox Grid.Row="1" Header="{lex:Loc LanguageOption}" Margin="0 3 0 3">
             <StackPanel>
-                <CheckBox Content="C#"/>
-                <CheckBox Content="C++"/>
+                <CheckBox Content="C#" IsChecked="{Binding CheckCSharp}"/>
+                <CheckBox Content="C++" IsChecked="{Binding CheckCpp}"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Row="2" Header="{lex:Loc CreateClassOption}" Margin="0 3 0 3">
             <StackPanel>
-                <RadioButton Content="{lex:Loc CreateFile}"/>
-                <RadioButton Content="{lex:Loc QuickView}"/>
+                <RadioButton Content="{lex:Loc CreateFile}" IsChecked="{Binding SelectCreateFile}"/>
+                <RadioButton Content="{lex:Loc QuickView}" IsChecked="{Binding SelectQuickView}"/>
             </StackPanel>
         </GroupBox>
-        <Button Grid.Row="4"  Content="{lex:Loc Create}" />
+        <Button Grid.Row="4"  Content="{lex:Loc Create}" Command="{Binding CreateCommand}" />
     </Grid>
 </Window>

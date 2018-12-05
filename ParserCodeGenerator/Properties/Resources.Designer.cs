@@ -70,7 +70,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   주석과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Comment과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Comment {
             get {
@@ -79,7 +79,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   생성과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Create과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Create {
             get {
@@ -238,6 +238,15 @@ namespace ParserCodeGenerator.Properties {
         public static string Order {
             get {
                 return ResourceManager.GetString("Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ParserCodeGenerator과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ProgramName {
+            get {
+                return ResourceManager.GetString("ProgramName", resourceCulture);
             }
         }
         

@@ -26,7 +26,7 @@ namespace ParserCodeGenerator.Views
         {
             InitializeComponent();
             ViewModel = (MainWindowViewModel)FindResource("ViewModel");
-            ViewModel.Init(this);
+            ViewModel.Initialize(this);
 
             //MaterialDesignThemes.Wpf.DataGridAssist.SetColumnHeaderPadding();
         }

@@ -195,4 +195,7 @@
   <data name="Value" xml:space="preserve">
     <value>값</value>
   </data>
+  <data name="ProgramName" xml:space="preserve">
+    <value>ParserCodeGenerator</value>
+  </data>
 </root>
