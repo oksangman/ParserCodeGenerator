@@ -1,0 +1,132 @@
+﻿<Window x:Class="ParserCodeGenerator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:r="clr-namespace:ParserCodeGenerator.Properties"
+        xmlns:local="clr-namespace:ParserCodeGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="764" Width="1024"
+        DataContext="{DynamicResource ViewModel}"
+        
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        
+        xmlns:viewmodels="clr-namespace:ParserCodeGenerator.ViewModels"
+        >
+    <Window.Resources>
+        <viewmodels:MainWindowViewModel x:Key="ViewModel" x:Name="ViewModel"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="{x:Static r:Resources.File}">
+                <MenuItem Header="{x:Static r:Resources.Open}" Command="{Binding OpenFileCommand}"/>
+                <MenuItem Header="{x:Static r:Resources.Save}" Command="{Binding SaveFileCommand}"/>
+
+                <MenuItem Header="{x:Static r:Resources.Exit}" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static r:Resources.TestBuild}" Command="{Binding BuildTestCommand}"/>
+            <MenuItem Header="{x:Static r:Resources.CreateClass}" Command="{Binding CreateClassCommand}"/>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- 왼쪽 위-->
+            <Label Grid.Row="0" Grid.Column="0" Height="25" Content="{x:Static r:Resources.Grammar_Def}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <DataGrid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GrammarList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" AlternatingRowBackground="#FF292929">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                        <Setter Property="Height" Value="35"/>
+                        <Setter Property="Padding" Value="8 0 8 0" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static r:Resources.RegularExpression}" Binding="{Binding RegularExpression}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Name}" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Comment}" Binding="{Binding Comment}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="LightGreen"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- splitter -->
+            <GridSplitter Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" Width="5"/>
+
+            <!-- 오른쪽 위-->
+            <Label Grid.Row="0" Grid.Column="2" Height="25" Content="{x:Static r:Resources.Test_String}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding TestString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+
+        </Grid>
+
+        <!-- splitter -->
+        <GridSplitter Grid.Row="2" Grid.ColumnSpan="3"  ResizeDirection="Rows" Height="5" HorizontalAlignment="Stretch" />
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Height="25" Content="{x:Static r:Resources.Result}" Background="#FF515151"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <!-- 왼쪽 아래 -->
+            <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ResultString}" VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
+
+            <!-- splitter -->
+            <GridSplitter Grid.Row="1" Grid.Column="1" ResizeDirection="Columns" Width="5" HorizontalAlignment="Stretch" />
+
+            <!-- 오른쪽 아래 -->
+            <DataGrid Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding ResultList}" AlternatingRowBackground="#FF292929" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                        <Setter Property="Height" Value="35"/>
+                        <Setter Property="Padding" Value="8 0 8 0" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Order}" Binding="{Binding Order}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Grammar}" Binding="{Binding Grammar}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Value}" Binding="{Binding Value}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Index}" Binding="{Binding Index}"/>
+                    <DataGridTextColumn Header="{x:Static r:Resources.Length}" Binding="{Binding Length}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <ProgressBar Grid.Row="4" Height="20"  Margin="0 3 0 0" Maximum="10" Minimum="0" Value="3"/>
+
+
+    </Grid>
+</Window>
