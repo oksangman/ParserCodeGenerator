@@ -196,6 +196,18 @@ namespace ParserCodeGenerator.ViewModels
 
         void BuildTest()
         {
+            if (GrammarList.Count == 0)
+            {
+                MessageBox.Show(_mainWindow, Properties.Resources.Error_GrammarListZero, Properties.Resources.Error, MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TestString))
+            {
+                MessageBox.Show(_mainWindow, Properties.Resources.Error_TestStringEmpty, Properties.Resources.Error, MessageBoxButton.OK);
+                return;
+            }
+
             _grammarBuilder.Clear();
             foreach (var item in GrammarList)
                 _grammarBuilder.AddRegExToken(item.RegularExpression, item.Name);

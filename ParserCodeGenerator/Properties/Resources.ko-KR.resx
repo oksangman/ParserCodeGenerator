@@ -198,4 +198,13 @@
   <data name="ProgramName" xml:space="preserve">
     <value>ParserCodeGenerator</value>
   </data>
+  <data name="Error_GrammarListZero" xml:space="preserve">
+    <value>문법 정의가 비었습니다.</value>
+  </data>
+  <data name="Error_TestStringEmpty" xml:space="preserve">
+    <value>테스트 문자열이 비었습니다.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
 </root>

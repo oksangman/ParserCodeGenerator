@@ -198,4 +198,26 @@
   <data name="ProgramName" xml:space="preserve">
     <value>ParserCodeGenerator</value>
   </data>
+  <data name="Error_GrammarListZero" xml:space="preserve">
+    <value>Grammar definition is empty</value>
+  </data>
+  <data name="Error_TestStringEmpty" xml:space="preserve">
+    <value>TestString is empty</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CSharp_AfterEnum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\csharp_afterenum.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CSharp_AfterNamespace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\csharp_afternamespace.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CSharp_BeforNamespace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\csharp_befornamespace.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CSharp_AfterAddToken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\csharp_afteraddtoken.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -1,0 +1,31 @@
+﻿
+    }
+    public class Token
+    {
+        public int Index { get; set; }
+        public int Length { get; set; }
+        public TokenType Type { get; set; }
+        public string Value { get; set; }
+
+        public Token(int _index, int _length, TokenType _type, string _value)
+        {
+            Index = _index;
+            Length = _length;
+            Type = _type;
+            Value = _value;
+        }
+    }
+    public class Parser
+    {
+
+        private Dictionary<TokenType, string> tokens;
+
+        public Exception LastError { get; set; }
+
+        public delegate void DelegateProgress(double progress);
+        public event DelegateProgress ProgressDelegate;
+
+        public Parser()
+        {
+            LastError = null;
+            tokens = new Dictionary<TokenType, string>();

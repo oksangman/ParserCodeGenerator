@@ -61,7 +61,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   English과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   한국어과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ChangeLanguage {
             get {
@@ -88,7 +88,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   클래스 생성과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Create class과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateClass {
             get {
@@ -97,7 +97,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Class 생성 옵션과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Create class option과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateClassOption {
             get {
@@ -106,7 +106,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   파일 생성과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Create file과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CreateFile {
             get {
@@ -115,17 +115,112 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        ///           }
+        ///
+        ///        public List&lt;Token&gt; Generate(string text)
+        ///        {
+        ///            Dictionary&lt;TokenType, List&lt;Match&gt;&gt; prepare = new Dictionary&lt;TokenType, List&lt;Match&gt;&gt;();
+        ///            foreach (KeyValuePair&lt;TokenType, string&gt; pair in tokens)
+        ///            {
+        ///                var t = Regex.Matches(text, pair.Value);
+        ///                foreach (Match m in t)
+        ///                {
+        ///                    if (m.Success)
+        ///                    {
+        ///                        if (!prepare.ContainsKey(pair.Key))
+        ///                [나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static byte[] example {
+        public static string CSharp_AfterAddToken {
             get {
-                object obj = ResourceManager.GetObject("example", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("CSharp_AfterAddToken", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   종료과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   
+        ///    }
+        ///    public class Token
+        ///    {
+        ///        public int Index { get; set; }
+        ///        public int Length { get; set; }
+        ///        public TokenType Type { get; set; }
+        ///        public string Value { get; set; }
+        ///
+        ///        public Token(int _index, int _length, TokenType _type, string _value)
+        ///        {
+        ///            Index = _index;
+        ///            Length = _length;
+        ///            Type = _type;
+        ///            Value = _value;
+        ///        }
+        ///    }
+        ///    public class Parser
+        ///    {
+        ///
+        ///        private Dictionary&lt;TokenType, strin[나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string CSharp_AfterEnum {
+            get {
+                return ResourceManager.GetString("CSharp_AfterEnum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   
+        ///{
+        ///    public enum TokenType
+        ///    {
+        ///        UNDEFINED = 0,
+        ///과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string CSharp_AfterNamespace {
+            get {
+                return ResourceManager.GetString("CSharp_AfterNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   using System;
+        ///using System.Collections.Generic;
+        ///using System.Text.RegularExpressions;
+        ///
+        ///namespace 과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string CSharp_BeforNamespace {
+            get {
+                return ResourceManager.GetString("CSharp_BeforNamespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Error과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Grammar definition is empty과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Error_GrammarListZero {
+            get {
+                return ResourceManager.GetString("Error_GrammarListZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   TestString is empty과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Error_TestStringEmpty {
+            get {
+                return ResourceManager.GetString("Error_TestStringEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Exit과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Exit {
             get {
@@ -134,7 +229,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   파일과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   File과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string File {
             get {
@@ -143,7 +238,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   문법과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Grammar과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Grammar {
             get {
@@ -152,7 +247,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   문법 정의과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Grammar definition과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Grammar_Def {
             get {
@@ -161,7 +256,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   인덱스과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Index과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Index {
             get {
@@ -170,7 +265,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   Namespace 입력과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Input namespace과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string InputNamespaceHint {
             get {
@@ -179,7 +274,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   언어 옵션과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Language option과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string LanguageOption {
             get {
@@ -188,7 +283,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   길이과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Length과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Length {
             get {
@@ -197,7 +292,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   예제 불러오기과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Load Example과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string LoadExample {
             get {
@@ -206,7 +301,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   이름과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Name과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Name {
             get {
@@ -224,7 +319,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   열기과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Open과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Open {
             get {
@@ -233,7 +328,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   순서과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Order과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Order {
             get {
@@ -251,7 +346,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   바로 보기과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Quick view과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string QuickView {
             get {
@@ -260,7 +355,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   정규 표현식과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Regular Expression과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string RegularExpression {
             get {
@@ -269,7 +364,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   결과과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Result과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Result {
             get {
@@ -278,7 +373,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   저장과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Save {
             get {
@@ -287,7 +382,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   테스트 문자열과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Test string과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Test_String {
             get {
@@ -296,7 +391,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   빌드 테스트과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Test Build과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TestBuild {
             get {
@@ -305,7 +400,7 @@ namespace ParserCodeGenerator.Properties {
         }
         
         /// <summary>
-        ///   값과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Value과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Value {
             get {

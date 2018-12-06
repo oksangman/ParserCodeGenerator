@@ -9,7 +9,7 @@
         
         DataContext="{DynamicResource ViewModel}"
         WindowStartupLocation="CenterOwner"
-        Title="{lex:Loc CreateClass}" Height="300" Width="200"
+        Title="{lex:Loc CreateClass}" Height="210" Width="200"
         
         
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -37,7 +37,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -55,12 +54,6 @@
                 <CheckBox Content="C++" IsChecked="{Binding CheckCpp}"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="2" Header="{lex:Loc CreateClassOption}" Margin="0 3 0 3">
-            <StackPanel>
-                <RadioButton Content="{lex:Loc CreateFile}" IsChecked="{Binding SelectCreateFile}"/>
-                <RadioButton Content="{lex:Loc QuickView}" IsChecked="{Binding SelectQuickView}"/>
-            </StackPanel>
-        </GroupBox>
-        <Button Grid.Row="4"  Content="{lex:Loc Create}" Command="{Binding CreateCommand}" />
+        <Button Grid.Row="2" Content="{lex:Loc Create}" Command="{Binding CreateCommand}"/>
     </Grid>
 </Window>

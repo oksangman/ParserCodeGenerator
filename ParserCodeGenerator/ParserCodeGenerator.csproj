@@ -99,7 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ko-KR.resx</DependentUpon>
     </Compile>
+    <Resource Include="Resources\CSharp_AfterNamespace.txt" />
+    <Resource Include="Resources\CSharp_AfterEnum.txt" />
+    <Resource Include="Resources\CSharp_BeforNamespace.txt" />
+    <Compile Include="Tool\CodeGenerator.cs" />
     <Compile Include="Tool\GrammarBuilder.cs" />
+    <Compile Include="Tool\MyStringBuilder.cs" />
     <Compile Include="Tool\VisualHelper.cs" />
     <Compile Include="ViewModels\CreateClassViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -138,6 +143,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\CSharp_AfterAddToken.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

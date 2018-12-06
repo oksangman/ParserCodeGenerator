@@ -14,6 +14,7 @@ namespace ParserCodeGenerator.ViewModels
     {
         private Window _window;
         private ObservableCollection<GrammarModel> _grammarList;
+
         public CreateClassViewModel()
         {
             CreateCommand = new Base.Command(Create);
@@ -34,7 +35,6 @@ namespace ParserCodeGenerator.ViewModels
             get { return _namespace; }
             set { SetProperty(ref _namespace, value); }
         }
-
         private bool _checkCSharp = true;
         public bool CheckCSharp
         {
@@ -49,33 +49,16 @@ namespace ParserCodeGenerator.ViewModels
             set { SetProperty(ref _checkCpp, value); }
         }
 
-        private bool _selectCreateFile = true;
-        public bool SelectCreateFile
-        {
-            get { return _selectCreateFile; }
-            set { SetProperty(ref _selectCreateFile, value); }
-        }
-
-        private bool _selectQuickView;
-        public bool SelectQuickView
-        {
-            get { return _selectQuickView; }
-            set { SetProperty(ref _selectQuickView, value); }
-        }
         #endregion Properties
 
         #region Command
-        public ICommand CreateCommand;
+        public ICommand CreateCommand { get; set; }
         #endregion
 
         #region Command Function
         void Create()
         {
-            if (SelectQuickView)
-            {
-
-                return;
-            }
+            string str = Tool.CodeGenerator.CSharpCodeGenerate(_grammarList.ToList(), this.Namespace);
         }
         #endregion Command Function
     }
